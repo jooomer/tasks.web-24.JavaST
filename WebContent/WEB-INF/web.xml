@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://java.sun.com/xml/ns/javaee" xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_3_0.xsd" id="WebApp_ID" version="3.0">
+  <display-name>tasks.web-24.JavaST</display-name>
+  <welcome-file-list>
+    <welcome-file></welcome-file>
+  </welcome-file-list>
+  <servlet>
+    <servlet-name>Controller</servlet-name>
+    <servlet-class>ua.store.controller.Controller</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>Controller</servlet-name>
+    <url-pattern></url-pattern>
+    <url-pattern>/initialization</url-pattern>
+    <url-pattern>/login</url-pattern>
+    <url-pattern>/account</url-pattern>
+    <url-pattern>/cart</url-pattern>
+    <url-pattern>/order</url-pattern>
+    <url-pattern>/orders</url-pattern>
+    <url-pattern>/checkout</url-pattern>
+    <url-pattern>/product</url-pattern>
+    <url-pattern>/cabinets</url-pattern>
+    <url-pattern>/sofas</url-pattern>
+    <url-pattern>/armchairs</url-pattern>
+    <url-pattern>/tables</url-pattern>
+    <url-pattern>/administrator</url-pattern>
+    <url-pattern>/administrator/catalog</url-pattern>
+    <url-pattern>/administrator/search</url-pattern>
+    <url-pattern>/administrator/users</url-pattern>
+    <url-pattern>/administrator/edit-user</url-pattern>
+    <url-pattern>/administrator/add-product</url-pattern>
+    <url-pattern>/administrator/product</url-pattern>
+    <url-pattern>/administrator/products</url-pattern>
+  </servlet-mapping>
+  <resource-ref>
+    <description>EDB Connection</description>
+    <res-ref-name>jdbc/mysql</res-ref-name>
+    <res-type>javax.sql.DataSource</res-type>
+    <res-auth>Container</res-auth>
+  </resource-ref>
+
+  <filter>
+  	<filter-name>LanguageFilter</filter-name>
+  	<filter-class>ua.store.filters.LanguageFilter</filter-class>
+  		<init-param>
+			<param-name>language</param-name>
+			<param-value>en</param-value>
+  		</init-param>
+  </filter>
+  <filter-mapping>
+  	<filter-name>LanguageFilter</filter-name>
+  	<url-pattern>/*</url-pattern>
+  </filter-mapping>
+</web-app>
